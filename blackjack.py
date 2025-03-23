@@ -27,7 +27,7 @@ __version__ = 0.1
 
 
 from random import shuffle
-
+from numbers import Number
 
 class Card:
     def __init__(self, suit, value):
@@ -61,6 +61,33 @@ class Shoe:
             print("Out of cards - must reshuffle.")
 
 
+def generate_shoe(custom_size=False):
+    if custom_size:
+        shoe_size = None
+        while shoe_size is None:
+            try:
+                shoe_size = int(input("How many decks per shoe? "))
+            except TypeError as e:
+                print("Shoe size must be a number\n")
+
+        return Shoe(shoe_size)
+    else:
+        return Shoe()
+
+def main():
+    shoe = None
+
+    custom_shoe_size = None
+    while custom_shoe_size is None:
+        custom_shoe_size = input("Set a custom shoe size? y/n: ").lower()
+        if custom_shoe_size == "y":
+            shoe = generate_shoe(True)
+        elif custom_shoe_size == "n":
+            shoe = generate_shoe()
+        else:
+            print(f"Invalid entry for whether to use custom shoe size: {custom_shoe_size}\n")
+            custom_shoe_size = None
+
 
 if __name__ == "__main__":
-    exit(0)
+    main()
