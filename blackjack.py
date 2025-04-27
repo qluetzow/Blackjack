@@ -1,5 +1,5 @@
-# Blackjack Copyright (C) 2019-2024 Quinn Luetzow
-# This file is part of Standard Fantasy Character Generator.
+# Blackjack Copyright (C) 2025 Quinn Luetzow
+# This file is part of Blackjack.
 
 # Blackjack is free software: you can
 # redistribute it and/or modify it under the terms of the GNU General
